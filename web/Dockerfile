@@ -5,7 +5,7 @@ CMD [ "bash" ]
 FROM base AS test-and-build
 COPY . /workspace
 ARG REACT_APP_API_SERVER
-RUN npm ci && npm run build && npm run build
+RUN npm ci && npm run test && npm run build
 
 #Hosting in nginx
 FROM nginx:latest AS production
